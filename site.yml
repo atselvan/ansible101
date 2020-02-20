@@ -1,0 +1,8 @@
+---
+- name: My first ansible playbook
+  hosts: jenkins
+  remote_user: vagrant
+  become: yes
+  roles:
+    - common
+    - httpd

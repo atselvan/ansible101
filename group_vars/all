@@ -1,0 +1,12 @@
+---
+# Variables defined here are common to all the host groups
+
+httpd_port: 80
+ntpserver: 192.168.1.2
+
+iface: '{{ ansible_default_ipv4.interface }}'
+apache_test_message: hello world
+apache_max_keep_alive_requests: 113
+apache_docroot: /var/www/html
+sites_available: /etc/httpd/conf/sites-available
+sites_enabled: /etc/httpd/conf/sites-enabled

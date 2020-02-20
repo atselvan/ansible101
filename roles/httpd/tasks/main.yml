@@ -1,0 +1,13 @@
+---
+- name: install httpd
+  yum: name=httpd state=present
+
+- name: create sites directories
+  file: path={{item}} state=directory
+  with_items: "{{apache_docroot}}"
+
+- name: copy index.html
+  template: src=index.html.j2 dest={{apache_docroot}}/index.html
+
+- name: start httpd
+  service: name=httpd state=started enabled=yes
